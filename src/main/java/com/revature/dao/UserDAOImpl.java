@@ -15,8 +15,8 @@ import com.sun.tools.sjavac.Log;
 
 public class UserDAOImpl implements UserDAO{
 	
-	private static Logger log = Logger.getLogger(UserDAOImpl.class);
-	
+
+	//get user
 	@Override
 	public User getUserByUsername(String username, Connection con) throws SQLException {
 		User user = null;
@@ -42,6 +42,7 @@ public class UserDAOImpl implements UserDAO{
 		return user;
 	}
 	
+	//add user to the table
 	@Override
 	public User insertUser(User user, Connection con, String username) throws SQLException {
 		String sql = "INSERT INTO project.users (username, first_name, last_name, pass, employee, balance) VALUES (?, ?, ?, ?, ?, ?)";
@@ -62,7 +63,7 @@ public class UserDAOImpl implements UserDAO{
 		return user;
 	}
 	
-	
+	//add applicant to the table
 	@Override
 	public User insertApplicant(User user, Connection con, String username) throws SQLException {
 		String sql = "INSERT INTO project.holding (username, first_name, last_name, pass, employee, balance) VALUES (?, ?, ?, ?, ?, ?)";
@@ -83,6 +84,7 @@ public class UserDAOImpl implements UserDAO{
 		return user;
 	}
 	
+	//remove applicant from the table
 	@Override
 	public User deleteApplicant(User user, Connection con, String username) throws SQLException {
 		String sql = "DELETE FROM project.holding WHERE username = ?";
@@ -99,6 +101,7 @@ public class UserDAOImpl implements UserDAO{
 		return user;
 	}
 	
+	//update a user's balance based on their withdrawal
 	@Override
 	public User Withdrawl(User user, Connection con, String username, double amount) throws SQLException {
 		String sql = "UPDATE project.users SET balance = ? WHERE username = ?";
@@ -115,6 +118,7 @@ public class UserDAOImpl implements UserDAO{
 		return user;
 	}
 	
+	//update a user's balance based on their deposit
 	@Override
 	public User Deposit(User user, Connection con, String username, double amount) throws SQLException {
 		String sql = "UPDATE project.users SET balance = ? WHERE username = ?";
@@ -131,6 +135,7 @@ public class UserDAOImpl implements UserDAO{
 		return user;
 	}
 	
+	//get all the applicants from the table
 	@Override
 	public List<User> getAllApplicants(Connection con) throws SQLException {
 		String sql = "SELECT * FROM project.holding";

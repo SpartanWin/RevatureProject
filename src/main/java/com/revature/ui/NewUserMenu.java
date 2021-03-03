@@ -29,13 +29,14 @@ public class NewUserMenu implements Login {
 		
 		do {
 			System.out.println("===NEW USER MENU===");
+			//check that their chosen username isn't already in use
 			while(usernameAttempt == "") {
 			System.out.println("Please enter a unique username:");
 			usernameAttempt = Menu.sc.nextLine();
 			try {
 				hold = userService.getUserByUsername(usernameAttempt);
 			}catch(UserNotFoundException | SQLException e) {
-				//System.out.println(e.getClass().getSimpleName() + " " + e.getMessage());
+				//no error message need here as it a check
 			}
 			if(hold != null)
 			{
@@ -46,6 +47,7 @@ public class NewUserMenu implements Login {
 			
 			}
 			
+			//enter in your personal info
 			while(fn == "") {
 				System.out.println("Please enter your first name:");
 				fn = Menu.sc.nextLine();
@@ -82,6 +84,7 @@ public class NewUserMenu implements Login {
 			
 		}while(done != true);
 		
+		//send them back to the main menu as all they can do is now done
 		Login mainMenu = new MainMenu();
 		mainMenu.display();
 	}

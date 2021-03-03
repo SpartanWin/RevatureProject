@@ -17,6 +17,7 @@ public class EmployeeLogin implements Login{
 		
 		do {
 			System.out.println("===LOGIN MENU===");
+			//make sure the username is on file
 			while(hold == null) {
 			System.out.println("Please enter your username:");
 			usernameAttempt = Menu.sc.nextLine();
@@ -28,6 +29,7 @@ public class EmployeeLogin implements Login{
 			}
 			}
 			
+			//make sure they can't continue if they are not an employee
 			if(hold.isEmployee() == false)
 			{
 				System.out.println("That is not an employee account.");
@@ -35,6 +37,7 @@ public class EmployeeLogin implements Login{
 				continue;
 			}
 			
+			//make sure their passwords match up
 			while(passwordAttempt == "") {
 				System.out.println("Please enter your password:");
 				passwordAttempt = Menu.sc.nextLine();

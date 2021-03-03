@@ -44,19 +44,23 @@ public class UserMenu implements Menu{
 			
 			switch (choice) {
 				case 1:
+					//go back to the main menu
 					Login mainMenu = new MainMenu();
 					mainMenu.display();
 					break;
-				case 2:			
+				case 2:	
+					//check your balance
 					System.out.println("Your balance is :$" + user.getBalance());
 					break;
 				case 3:
+					//deposit money
 					do {
 					System.out.println("Please enter the amount you wish to deposit:");
 					try {
 						dep = Double.parseDouble(Menu.sc.nextLine());
 					} catch (NumberFormatException e) {
 					}
+					//check that they aren't trying to deposit negative values
 					}while(dep <= 0);
 					try (Connection con = ConnectionUtil.getConnection()){
 						userService.userDAO.Deposit(user, con, user.getUsername(), dep);
@@ -65,13 +69,15 @@ public class UserMenu implements Menu{
 					}
 					log.info("User " + user.getUsername() + " has deposited $" + dep);
 					break;
-				case 4:			
+				case 4:
+					//withdraw money
 					do {
 					System.out.println("Please enter the amount you wish to withdraw:");
 					try {
 						with = Double.parseDouble(Menu.sc.nextLine());
 					} catch (NumberFormatException e) {
 					}
+					//check that they aren't trying to withdraw more money than they have or a negative value
 					}while(with <= 0 || with > user.getBalance());
 					try (Connection con = ConnectionUtil.getConnection()){
 						userService.userDAO.Withdrawl(user, con, user.getUsername(), with);
@@ -80,7 +86,9 @@ public class UserMenu implements Menu{
 					}
 					log.info("User " + user.getUsername() + " has withdrawn $" + with);
 					break;
-				case 5:			
+				case 5:	
+					//send a transaction
+					//check that the user they are sending to exists
 					while(hold == null) {
 						System.out.println("Please enter the user you which to send to:");
 						otherUser = Menu.sc.nextLine();
@@ -92,6 +100,7 @@ public class UserMenu implements Menu{
 							hold = null;
 						} 
 						}
+					//make sure they don't send more money than they have or a negative value
 					do {
 						System.out.println("Please enter the amount you wish to send:");
 						try {

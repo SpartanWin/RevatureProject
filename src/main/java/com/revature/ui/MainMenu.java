@@ -20,6 +20,7 @@ public class MainMenu implements Login{
 				
 			}
 			
+			//choose your option
 			switch(choice) {
 			case 1:
 				break;

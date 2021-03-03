@@ -19,6 +19,7 @@ public class LoginMenu implements Login{
 		
 		do {
 			System.out.println("===LOGIN MENU===");
+			//make sure the username is on file
 			while(hold == null) {
 			System.out.println("Please enter your username:");
 			usernameAttempt = Menu.sc.nextLine();
@@ -30,6 +31,7 @@ public class LoginMenu implements Login{
 			} 
 			}
 			
+			//make sure their passwords match up
 			while(passwordAttempt == "") {
 				System.out.println("Please enter your password:");
 				passwordAttempt = Menu.sc.nextLine();

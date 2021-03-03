@@ -12,6 +12,7 @@ public class ConnectionUtil {
 		super();
 	}
 	
+	//get the connection to the database setup
 	public static Connection getConnection() throws SQLException {
 		Driver postgresDriver = new Driver();
 		DriverManager.registerDriver(new Driver());

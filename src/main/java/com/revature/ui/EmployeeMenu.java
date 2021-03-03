@@ -46,10 +46,12 @@ public class EmployeeMenu implements Menu {
 			
 			switch(choice) {
 			case 1:
+				//send them back to the main menu
 				Login mainMenu = new MainMenu();
 				mainMenu.display();
 				break;
 			case 2:
+				//see all transactions overall
 				try {
 					transactions = userService.transactionDAO.getAllTransactions(con = ConnectionUtil.getConnection());
 				}catch(SQLException e) {
@@ -63,6 +65,7 @@ public class EmployeeMenu implements Menu {
 				log.info("All the transactions have been retrieved.");
 				break;
 			case 3:
+				//check for applicants for approval
 				try (Connection con = ConnectionUtil.getConnection()){
 					applicants = userService.userDAO.getAllApplicants(con);
 				}catch(SQLException e) {
@@ -72,7 +75,7 @@ public class EmployeeMenu implements Menu {
 				if(applicants.size() == 0) {
 					System.out.println("No new applicants");
 				}
-				
+				//cycle through all applicants
 				for(int i = 0; i < applicants.size(); i++ )
 				{
 					do {
@@ -89,6 +92,7 @@ public class EmployeeMenu implements Menu {
 					}
 					switch(applicantChoice) {
 					case 1:
+						//approve an applicant
 						try (Connection con = ConnectionUtil.getConnection()){
 							hold = userService.userDAO.insertUser(place, con, place.getUsername());
 							log.info("User " + place.getUsername() + " has been added.");
@@ -99,6 +103,7 @@ public class EmployeeMenu implements Menu {
 						}
 						break;
 					case 2:
+						//decline an applicant
 						try (Connection con = ConnectionUtil.getConnection()){
 							log.info("Applicant " + i + ": " + place.getUsername() + " has been deleted.");
 							hold = userService.userDAO.deleteApplicant(place, con, place.getUsername());
@@ -113,6 +118,7 @@ public class EmployeeMenu implements Menu {
 				}
 				break;
 			case 4:
+				//get a user's balance
 				while(hold == null) {
 					System.out.println("Please enter the account you want to look up:");
 					usernameAttempt = Menu.sc.nextLine();

@@ -23,11 +23,12 @@ public class TransactionDAOImpl implements TransactionDAO {
 	private static Logger log = Logger.getLogger(TransactionDAOImpl.class);
 	
 	Transaction post = new Transaction();
-	//Date timeNow = Calendar.getInstance().getTime();
 	DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
-	//String strDate = dateFormat.format(timeNow);
+	//switching to sql.Date so it can be uploaded to the table
 	Date checkTime = new Date(System.currentTimeMillis());
-
+	
+	
+	//get all the transactions of one user
 	@Override
 	public List<Transaction> getTransactionsByUsername(String username, Connection con) throws SQLException {
 String sql = "SELECT * FROM project.transactions WHERE username = ?";
@@ -54,6 +55,7 @@ String sql = "SELECT * FROM project.transactions WHERE username = ?";
 		return posts;
 	}
 	
+	//get all transactions overall
 	@Override
 	public List<Transaction> getAllTransactions(Connection con) throws SQLException {
 String sql = "SELECT * FROM project.transactions";
@@ -77,7 +79,9 @@ String sql = "SELECT * FROM project.transactions";
 		}
 		return posts;
 	}
-
+	
+	
+	//add transaction to the table
 	@Override
 	public Transaction insertTransaction(Transaction act, Connection con, String username) throws SQLException {
 		String sql = "INSERT INTO project.transactions (moneydate, username, amount, reciever) VALUES (?, ?, ?, ?)";
