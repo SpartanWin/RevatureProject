@@ -59,3 +59,30 @@
 03-02-2021 Tuesday EST 21:44:42,548 {INFO} [com.revature.ui.UserMenu] - Applicant check has been added.
 03-02-2021 Tuesday EST 21:44:57,077 {INFO} [com.revature.dao.UserDAOImpl] - Applicant check has been deleted.
 03-02-2021 Tuesday EST 21:47:00,832 {INFO} [com.revature.dao.UserDAOImpl] - Applicant check has been deleted.
+03-03-2021 Wednesday EST 17:49:06,903 {INFO} [com.revature.ui.UserMenu] - Applicant test has been added.
+03-03-2021 Wednesday EST 17:49:45,548 {INFO} [com.revature.dao.UserDAOImpl] - All the transactions have been retrieved.
+03-03-2021 Wednesday EST 17:50:00,070 {INFO} [com.revature.dao.UserDAOImpl] - User test has been added.
+03-03-2021 Wednesday EST 17:50:00,070 {INFO} [com.revature.dao.UserDAOImpl] - Applicant test has been deleted.
+03-03-2021 Wednesday EST 17:51:01,206 {INFO} [com.revature.ui.UserMenu] - User test has deposited $100.0
+03-03-2021 Wednesday EST 17:51:21,950 {INFO} [com.revature.ui.UserMenu] - User test has withdrawn $100.0
+03-03-2021 Wednesday EST 17:51:34,350 {INFO} [com.revature.ui.UserMenu] - Transaction by test has been added.
+03-04-2021 Thursday EST 10:10:10,890 {INFO} [com.revature.ui.UserMenu] - Applicant test has been added.
+03-04-2021 Thursday EST 11:43:09,788 {INFO} [com.revature.ui.UserMenu] - Applicant test has been added.
+03-04-2021 Thursday EST 11:43:49,555 {INFO} [com.revature.ui.UserMenu] - Applicant tes has been added.
+03-04-2021 Thursday EST 11:44:46,879 {INFO} [com.revature.dao.UserDAOImpl] - All the transactions have been retrieved.
+03-04-2021 Thursday EST 11:45:17,352 {INFO} [com.revature.dao.UserDAOImpl] - User test has been added.
+03-04-2021 Thursday EST 11:45:17,352 {INFO} [com.revature.dao.UserDAOImpl] - Applicant test has been deleted.
+03-04-2021 Thursday EST 11:45:38,747 {INFO} [com.revature.dao.UserDAOImpl] - Applicant 1: tes has been deleted.
+03-04-2021 Thursday EST 11:46:16,527 {ERROR} [com.revature.ui.UserMenu] - Sender testUser tried sending money to an account that cannot be found: ffffffff
+03-04-2021 Thursday EST 11:46:33,770 {INFO} [com.revature.ui.UserMenu] - Transaction by testUser has been added.
+03-04-2021 Thursday EST 11:46:44,745 {INFO} [com.revature.ui.UserMenu] - User testUser has deposited $100.0
+03-04-2021 Thursday EST 11:46:58,010 {INFO} [com.revature.ui.UserMenu] - User testUser has withdrawn $100.0
+03-04-2021 Thursday EST 11:52:14,468 {INFO} [com.revature.ui.UserMenu] - Applicant tes has been added.
+03-04-2021 Thursday EST 11:52:28,380 {INFO} [com.revature.ui.UserMenu] - Applicant tes2 has been added.
+03-04-2021 Thursday EST 11:52:54,372 {INFO} [com.revature.dao.UserDAOImpl] - Applicant 1: tes has been deleted.
+03-04-2021 Thursday EST 11:53:00,700 {INFO} [com.revature.dao.UserDAOImpl] - All the transactions have been retrieved.
+03-04-2021 Thursday EST 11:58:22,489 {INFO} [com.revature.ui.UserMenu] - Applicant tes has been added.
+03-04-2021 Thursday EST 11:58:36,004 {INFO} [com.revature.ui.UserMenu] - Applicant tes1 has been added.
+03-04-2021 Thursday EST 11:58:52,212 {INFO} [com.revature.dao.UserDAOImpl] - Applicant 0: tes2 has been deleted.
+03-04-2021 Thursday EST 11:58:54,627 {INFO} [com.revature.dao.UserDAOImpl] - Applicant 1: tes has been deleted.
+03-04-2021 Thursday EST 11:59:00,755 {INFO} [com.revature.dao.UserDAOImpl] - Applicant 2: tes1 has been deleted.

@@ -79,9 +79,10 @@ public class EmployeeMenu implements Menu {
 				for(int i = 0; i < applicants.size(); i++ )
 				{
 					do {
+					int present = i+1;
 					User place = applicants.get(i);
 					applicantChoice = 0;
-					System.out.println("Applicant " + place.getUsername());
+					System.out.println("Applicant " + present + ": " + place.toString());
 					System.out.println("Accept or Decline");
 					System.out.println("1. Accept");
 					System.out.println("2. Decline");
